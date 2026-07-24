@@ -1,11 +1,12 @@
 package net.peyton.eagler.minecraft;
 
 import net.lax1dude.eaglercraft.opengl.VertexFormat;
+import net.lax1dude.eaglercraft.opengl.WorldRenderer;
 import net.lax1dude.eaglercraft.opengl.WorldVertexBufferUploader;
 
 public class Tessellator {
 	
-	private net.lax1dude.eaglercraft.opengl.WorldRenderer worldRenderer;
+	private WorldRenderer worldRenderer;
 	public static final Tessellator instance = new Tessellator(524288);
 	private final VertexFormat format = VertexFormat.MODIFIABLE;
 	
