@@ -39,7 +39,7 @@ public class EntityRenderer {
 	private double cameraZoom = 1.0D;
 	private double cameraYaw = 0.0D;
 	private double cameraPitch = 0.0D;
-	private long prevFrameTime = System.currentTimeMillis();
+	private long prevFrameTime = EagRuntime.steadyTimeMillis();
 	private long field_28133_I = 0L;
 	private Random random = new Random();
 	private int rainSoundCounter = 0;
@@ -328,11 +328,11 @@ public class EntityRenderer {
 
 	public void updateCameraAndRender(float var1) {
 		if(!Display.isActive()) {
-			if(System.currentTimeMillis() - this.prevFrameTime > 500L) {
+			if(EagRuntime.steadyTimeMillis() - this.prevFrameTime > 500L) {
 				this.mc.displayInGameMenu();
 			}
 		} else {
-			this.prevFrameTime = System.currentTimeMillis();
+			this.prevFrameTime = EagRuntime.steadyTimeMillis();
 		}
 
 		if(this.mc.inGameHasFocus) {
@@ -379,7 +379,7 @@ public class EntityRenderer {
 				}
 
 				if(this.mc.gameSettings.limitFramerate == 2) {
-					var8 = (this.field_28133_I + (long)(1000000000 / var7) - System.nanoTime()) / 1000000L;
+					var8 = (this.field_28133_I + (long)(1000000000 / var7) - EagRuntime.nanoTime()) / 1000000L;
 					if(var8 > 0L && var8 < 500L) {
 						try {
 							Thread.sleep(var8);
@@ -389,7 +389,7 @@ public class EntityRenderer {
 					}
 				}
 
-				this.field_28133_I = System.nanoTime();
+				this.field_28133_I = EagRuntime.nanoTime();
 				if(!this.mc.gameSettings.hideGUI || this.mc.currentScreen != null) {
 					this.mc.ingameGUI.renderGameOverlay(var1, this.mc.currentScreen != null, var16, var17);
 				}
@@ -401,7 +401,7 @@ public class EntityRenderer {
 				GL11.glLoadIdentity();
 				this.func_905_b();
 				if(this.mc.gameSettings.limitFramerate == 2) {
-					var8 = (this.field_28133_I + (long)(1000000000 / var7) - System.nanoTime()) / 1000000L;
+					var8 = (this.field_28133_I + (long)(1000000000 / var7) - EagRuntime.nanoTime()) / 1000000L;
 					if(var8 < 0L) {
 						var8 += 10L;
 					}
@@ -415,7 +415,7 @@ public class EntityRenderer {
 					}
 				}
 
-				this.field_28133_I = System.nanoTime();
+				this.field_28133_I = EagRuntime.nanoTime();
 			}
 
 			if(this.mc.currentScreen != null) {
@@ -484,7 +484,7 @@ public class EntityRenderer {
 			this.mc.renderGlobal.clipRenderersByFrustrum(var19, var1);
 			if(var18 == 0) {
 				while(!this.mc.renderGlobal.updateRenderers(var4, false) && var2 != 0L) {
-					long var20 = var2 - System.nanoTime();
+					long var20 = var2 - EagRuntime.nanoTime();
 					if(var20 < 0L || var20 > 1000000000L) {
 						break;
 					}

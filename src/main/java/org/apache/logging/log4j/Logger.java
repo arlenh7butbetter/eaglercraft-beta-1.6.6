@@ -107,7 +107,7 @@ public class Logger {
 	public void log(Level level, String msg) {
 		if (level.levelInt >= LogManager.logLevel.levelInt) {
 			synchronized (LogManager.logLock) {
-				dateInstance.setTime(System.currentTimeMillis());
+				dateInstance.setTime(EagRuntime.steadyTimeMillis());
 				String line = "[" + fmt.format(dateInstance) + "]" + "[" + "main" + "/" + level.levelName + "]" + "["
 						+ loggerName + "]: " + msg;
 				level.getPrintStream().println(line);
@@ -121,7 +121,7 @@ public class Logger {
 	public void log(Level level, String msg, Object... args) {
 		if (level.levelInt >= LogManager.logLevel.levelInt) {
 			synchronized (LogManager.logLock) {
-				dateInstance.setTime(System.currentTimeMillis());
+				dateInstance.setTime(EagRuntime.steadyTimeMillis());
 				String line = "[" + fmt.format(dateInstance) + "]" + "[" + "main" + "/" + level.levelName + "]" + "["
 						+ loggerName + "]: " + formatParams(msg, args);
 				level.getPrintStream().println(line);

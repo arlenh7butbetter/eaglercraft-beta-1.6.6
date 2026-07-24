@@ -14,7 +14,7 @@ public class SaveHandler implements ISaveHandler {
 	private final File saveDirectory;
 	private final File playersDirectory;
 	private final File field_28114_d;
-	private final long now = System.currentTimeMillis();
+	private final long now = EagRuntime.steadyTimeMillis();
 
 	public SaveHandler(File var1, String var2, boolean var3) {
 		this.saveDirectory = new File(var1, var2);

@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96d45f5d-4b72-405d-86c2-aba6a11a1aea" name="Changes" comment="">
+    <list default="true" id="96d45f5d-4b72-405d-86c2-aba6a11a1aea" name="Changes" comment="minecraft.java clean woohoo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/client/Minecraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/client/Minecraft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/CanvasCrashReport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/CanvasIsomPreview.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/CanvasMinecraftApplet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/CanvasMojangLogo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ClippingHelperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ClippingHelperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GLAllocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GLAllocation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GameSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GameSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/SaveConverterMcRegion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/SaveConverterMcRegion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/StatFileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/StatFileWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/TexturePackList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/TexturePackList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ThreadDownloadResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ThreadDownloadResources.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +93,37 @@
       <option name="presentableId" value="Default" />
       <updated>1784876405417</updated>
     </task>
+    <task id="LOCAL-00001" summary="deleted some useless files and changed some file to VFile2">
+      <option name="closed" value="true" />
+      <created>1784877026383</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1784877026383</updated>
+    </task>
+    <task id="LOCAL-00002" summary="removed some mccanvas bs from minecraft.java">
+      <option name="closed" value="true" />
+      <created>1784877158119</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1784877158119</updated>
+    </task>
+    <task id="LOCAL-00003" summary="minecraft.java clean woohoo">
+      <option name="closed" value="true" />
+      <created>1784877372507</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1784877372507</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="deleted some useless files and changed some file to VFile2" />
+    <MESSAGE value="removed some mccanvas bs from minecraft.java" />
+    <MESSAGE value="minecraft.java clean woohoo" />
+    <option name="LAST_COMMIT_MESSAGE" value="minecraft.java clean woohoo" />
   </component>
 </project>

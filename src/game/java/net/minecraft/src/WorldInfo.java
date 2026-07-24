@@ -93,7 +93,7 @@ public class WorldInfo {
 		var1.setInteger("SpawnZ", this.spawnZ);
 		var1.setLong("Time", this.worldTime);
 		var1.setLong("SizeOnDisk", this.sizeOnDisk);
-		var1.setLong("LastPlayed", System.currentTimeMillis());
+		var1.setLong("LastPlayed", EagRuntime.steadyTimeMillis());
 		var1.setString("LevelName", this.levelName);
 		var1.setInteger("version", this.saveVersion);
 		var1.setInteger("rainTime", this.rainTime);

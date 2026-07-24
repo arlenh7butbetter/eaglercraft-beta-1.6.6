@@ -113,7 +113,7 @@ public class GuiMainMenu extends GuiScreen {
 		GL11.glPushMatrix();
 		GL11.glTranslatef((float)(this.width / 2 + 90), 70.0F, 0.0F);
 		GL11.glRotatef(-20.0F, 0.0F, 0.0F, 1.0F);
-		float var8 = 1.8F - MathHelper.abs(MathHelper.sin((float)(System.currentTimeMillis() % 1000L) / 1000.0F * (float)Math.PI * 2.0F) * 0.1F);
+		float var8 = 1.8F - MathHelper.abs(MathHelper.sin((float)(EagRuntime.steadyTimeMillis() % 1000L) / 1000.0F * (float)Math.PI * 2.0F) * 0.1F);
 		var8 = var8 * 100.0F / (float)(this.fontRenderer.getStringWidth(this.splashText) + 32);
 		GL11.glScalef(var8, var8, var8);
 		this.drawCenteredString(this.fontRenderer, this.splashText, 0, -8, 16776960);

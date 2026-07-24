@@ -14,7 +14,7 @@ public abstract class Packet {
 	private static Map packetClassToIdMap = new HashMap();
 	private static Set clientPacketIdList = new HashSet();
 	private static Set serverPacketIdList = new HashSet();
-	public final long creationTimeMillis = System.currentTimeMillis();
+	public final long creationTimeMillis = EagRuntime.steadyTimeMillis();
 	public boolean isChunkDataPacket = false;
 	private static HashMap packetStats;
 	private static int totalPacketsCount;

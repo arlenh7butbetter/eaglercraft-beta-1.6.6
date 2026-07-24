@@ -131,7 +131,7 @@ public class EPKDownloadHelper {
 		if(cacheFixStr != null) {
 			cacheFixStr = Window.encodeURIComponent(cacheFixStr);
 		}else {
-			cacheFixStr = "t" + System.currentTimeMillis();
+			cacheFixStr = "t" + EagRuntime.steadyTimeMillis();
 		}
 		String toCheck = url.indexOf("://") != -1 ? url : PlatformRuntime.win.getLocation().getFullURL();
 		if(toCheck.startsWith("http:") || toCheck.startsWith("https:")) {

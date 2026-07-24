@@ -81,7 +81,7 @@ public class NetworkManager {
 			int var10001;
 			Packet var2;
 			Object var3;
-			if(!this.dataPackets.isEmpty() && (this.chunkDataSendCounter == 0 || System.currentTimeMillis() - ((Packet)this.dataPackets.get(0)).creationTimeMillis >= (long)this.chunkDataSendCounter)) {
+			if(!this.dataPackets.isEmpty() && (this.chunkDataSendCounter == 0 || EagRuntime.steadyTimeMillis() - ((Packet)this.dataPackets.get(0)).creationTimeMillis >= (long)this.chunkDataSendCounter)) {
 				var3 = this.sendQueueLock;
 				synchronized(var3) {
 					var2 = (Packet)this.dataPackets.remove(0);
@@ -95,7 +95,7 @@ public class NetworkManager {
 				var1 = true;
 			}
 
-			if(this.field_20100_w-- <= 0 && !this.chunkDataPackets.isEmpty() && (this.chunkDataSendCounter == 0 || System.currentTimeMillis() - ((Packet)this.chunkDataPackets.get(0)).creationTimeMillis >= (long)this.chunkDataSendCounter)) {
+			if(this.field_20100_w-- <= 0 && !this.chunkDataPackets.isEmpty() && (this.chunkDataSendCounter == 0 || EagRuntime.steadyTimeMillis() - ((Packet)this.chunkDataPackets.get(0)).creationTimeMillis >= (long)this.chunkDataSendCounter)) {
 				var3 = this.sendQueueLock;
 				synchronized(var3) {
 					var2 = (Packet)this.chunkDataPackets.remove(0);

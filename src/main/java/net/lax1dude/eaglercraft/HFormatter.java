@@ -2361,7 +2361,7 @@ public final class HFormatter implements Closeable, Flushable {
 		}
 
 		private void transform_N() {
-			// TODO System.nanoTime();
+			// TODO EagRuntime.nanoTime();
 			long nanosecond = calendar.get(Calendar.MILLISECOND) * 1000000L;
 			result.append(paddingZeros(nanosecond, 9));
 		}

@@ -229,7 +229,7 @@ public class RegionFile {
 				}
 			}
 
-			this.func_22208_b(var1, var2, (int)(System.currentTimeMillis() / 1000L));
+			this.func_22208_b(var1, var2, (int)(EagRuntime.steadyTimeMillis() / 1000L));
 		} catch (IOException var12) {
 			var12.printStackTrace();
 		}

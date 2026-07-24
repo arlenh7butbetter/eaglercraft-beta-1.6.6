@@ -1,6 +1,7 @@
 package net.minecraft.client;
 
 import net.lax1dude.eaglercraft.Display;
+import net.lax1dude.eaglercraft.EagRuntime;
 import net.lax1dude.eaglercraft.internal.vfs2.VFile2;
 import net.lax1dude.eaglercraft.profile.EaglerProfile;
 import net.lax1dude.eaglercraft.Mouse;
@@ -71,7 +72,6 @@ import net.minecraft.src.StatFileWriter;
 import net.minecraft.src.StatList;
 import net.minecraft.src.StatStringFormatKeyInv;
 import net.minecraft.src.Teleporter;
-import net.minecraft.src.Tessellator;
 import net.minecraft.src.TextureCompassFX;
 import net.minecraft.src.TextureFlamesFX;
 import net.minecraft.src.TextureLavaFX;
@@ -90,6 +90,7 @@ import net.minecraft.src.Vec3D;
 import net.minecraft.src.World;
 import net.minecraft.src.WorldProvider;
 import net.minecraft.src.WorldRenderer;
+import net.peyton.eagler.minecraft.Tessellator;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.glu.GLU;
@@ -151,12 +152,11 @@ public class Minecraft implements Runnable {
 	public boolean inGameHasFocus = false;
 	private int mouseTicksRan = 0;
 	public boolean isRaining = false;
-	long systemTime = System.currentTimeMillis();
+	long systemTime = EagRuntime.steadyTimeMillis();
 	private int joinPlayerCounter = 0;
 
 	public Minecraft() {
 		StatList.func_27360_a();
-		new ThreadSleepForever(this, "Timer hack thread");
 		this.displayWidth = Display.getWidth();
 		this.displayHeight = Display.getHeight();
 		this.session = new Session(EaglerProfile.getName());
@@ -421,7 +421,7 @@ public class Minecraft implements Runnable {
 		}
 
 		try {
-			long var1 = System.currentTimeMillis();
+			long var1 = EagRuntime.steadyTimeMillis();
 			int var3 = 0;
 
 			while(this.running) {
@@ -440,7 +440,7 @@ public class Minecraft implements Runnable {
 						this.timer.updateTimer();
 					}
 
-					long var23 = System.nanoTime();
+					long var23 = EagRuntime.nanoTime();
 
 					for(int var6 = 0; var6 < this.timer.elapsedTicks; ++var6) {
 						++this.ticksRan;
@@ -454,7 +454,7 @@ public class Minecraft implements Runnable {
 						}
 					}
 
-					long var24 = System.nanoTime() - var23;
+					long var24 = EagRuntime.nanoTime() - var23;
 					this.checkGLError("Pre render");
 					RenderBlocks.fancyGrass = this.gameSettings.fancyGraphics;
 					this.sndManager.func_338_a(this.thePlayer, this.timer.renderPartialTicks);
@@ -490,7 +490,7 @@ public class Minecraft implements Runnable {
 					if(this.gameSettings.showDebugInfo) {
 						this.displayDebugInfo(var24);
 					} else {
-						this.prevFrameTime = System.nanoTime();
+						this.prevFrameTime = EagRuntime.nanoTime();
 					}
 
 					this.guiAchievement.updateAchievementWindow();
@@ -504,7 +504,7 @@ public class Minecraft implements Runnable {
 					this.checkGLError("Post render");
 					++var3;
 
-					for(this.isGamePaused = !this.isMultiplayerWorld() && this.currentScreen != null && this.currentScreen.doesGuiPauseGame(); System.currentTimeMillis() >= var1 + 1000L; var3 = 0) {
+					for(this.isGamePaused = !this.isMultiplayerWorld() && this.currentScreen != null && this.currentScreen.doesGuiPauseGame(); EagRuntime.steadyTimeMillis() >= var1 + 1000L; var3 = 0) {
 						this.debug = var3 + " fps, " + WorldRenderer.chunksUpdated + " chunk updates";
 						WorldRenderer.chunksUpdated = 0;
 						var1 += 1000L;
@@ -568,10 +568,10 @@ public class Minecraft implements Runnable {
 	private void displayDebugInfo(long var1) {
 		long var3 = 16666666L;
 		if(this.prevFrameTime == -1L) {
-			this.prevFrameTime = System.nanoTime();
+			this.prevFrameTime = EagRuntime.nanoTime();
 		}
 
-		long var5 = System.nanoTime();
+		long var5 = EagRuntime.nanoTime();
 		tickTimes[numRecordedFrameTimes & frameTimes.length - 1] = var1;
 		frameTimes[numRecordedFrameTimes++ & frameTimes.length - 1] = var5 - this.prevFrameTime;
 		this.prevFrameTime = var5;
@@ -941,7 +941,7 @@ public class Minecraft implements Runnable {
 								}
 							}
 
-							var5 = System.currentTimeMillis() - this.systemTime;
+							var5 = EagRuntime.steadyTimeMillis() - this.systemTime;
 						} while(var5 > 200L);
 
 						var3 = Mouse.getEventDWheel();
@@ -1030,7 +1030,7 @@ public class Minecraft implements Runnable {
 			}
 		}
 
-		this.systemTime = System.currentTimeMillis();
+		this.systemTime = EagRuntime.steadyTimeMillis();
 	}
 
 	private void forceReload() {
@@ -1342,7 +1342,7 @@ public class Minecraft implements Runnable {
 	public static void main(String[] var0) {
 		String var1 = null;
 		String var2 = null;
-		var1 = "Player" + System.currentTimeMillis() % 1000L;
+		var1 = "Player" + EagRuntime.steadyTimeMillis() % 1000L;
 		if(var0.length > 0) {
 			var1 = var0[0];
 		}

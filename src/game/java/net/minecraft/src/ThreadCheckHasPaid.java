@@ -16,7 +16,7 @@ public class ThreadCheckHasPaid extends Thread {
 			HttpURLConnection var1 = (HttpURLConnection)(new URL("https://login.minecraft.net/session?name=" + this.field_28146_a.session.username + "&session=" + this.field_28146_a.session.sessionId)).openConnection();
 			var1.connect();
 			if(var1.getResponseCode() == 400) {
-				Minecraft.hasPaidCheckTime = System.currentTimeMillis();
+				Minecraft.hasPaidCheckTime = EagRuntime.steadyTimeMillis();
 			}
 
 			var1.disconnect();

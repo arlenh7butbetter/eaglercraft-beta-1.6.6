@@ -23,7 +23,7 @@ public class GuiAchievement extends Gui {
 	public void queueTakenAchievement(Achievement var1) {
 		this.field_25085_d = StatCollector.translateToLocal("achievement.get");
 		this.field_25084_e = var1.statName;
-		this.field_25083_f = System.currentTimeMillis();
+		this.field_25083_f = EagRuntime.steadyTimeMillis();
 		this.theAchievement = var1;
 		this.field_27103_i = false;
 	}
@@ -31,7 +31,7 @@ public class GuiAchievement extends Gui {
 	public void queueAchievementInformation(Achievement var1) {
 		this.field_25085_d = var1.statName;
 		this.field_25084_e = var1.getDescription();
-		this.field_25083_f = System.currentTimeMillis() - 2500L;
+		this.field_25083_f = EagRuntime.steadyTimeMillis() - 2500L;
 		this.theAchievement = var1;
 		this.field_27103_i = true;
 	}
@@ -73,7 +73,7 @@ public class GuiAchievement extends Gui {
 		}
 
 		if(this.theAchievement != null && this.field_25083_f != 0L) {
-			double var8 = (double)(System.currentTimeMillis() - this.field_25083_f) / 3000.0D;
+			double var8 = (double)(EagRuntime.steadyTimeMillis() - this.field_25083_f) / 3000.0D;
 			if(this.field_27103_i || this.field_27103_i || var8 >= 0.0D && var8 <= 1.0D) {
 				this.updateAchievementWindowScale();
 				GL11.glDisable(GL11.GL_DEPTH_TEST);

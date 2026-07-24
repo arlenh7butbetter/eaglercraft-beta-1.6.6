@@ -215,7 +215,7 @@ public class GuiAchievements extends GuiScreen {
 				boolean var18 = false;
 				boolean var19 = this.field_27120_x.hasAchievementUnlocked(var28);
 				boolean var20 = this.field_27120_x.func_27181_b(var28);
-				var38 = Math.sin((double)(System.currentTimeMillis() % 600L) / 600.0D * Math.PI * 2.0D) > 0.6D ? 255 : 130;
+				var38 = Math.sin((double)(EagRuntime.steadyTimeMillis() % 600L) / 600.0D * Math.PI * 2.0D) > 0.6D ? 255 : 130;
 				if(var19) {
 					var33 = -9408400;
 				} else if(var20) {
@@ -250,7 +250,7 @@ public class GuiAchievements extends GuiScreen {
 					var35 = 1.0F;
 					GL11.glColor4f(var35, var35, var35, 1.0F);
 				} else if(this.field_27120_x.func_27181_b(var30)) {
-					var35 = Math.sin((double)(System.currentTimeMillis() % 600L) / 600.0D * Math.PI * 2.0D) < 0.6D ? 0.6F : 0.8F;
+					var35 = Math.sin((double)(EagRuntime.steadyTimeMillis() % 600L) / 600.0D * Math.PI * 2.0D) < 0.6D ? 0.6F : 0.8F;
 					GL11.glColor4f(var35, var35, var35, 1.0F);
 				} else {
 					var35 = 0.3F;

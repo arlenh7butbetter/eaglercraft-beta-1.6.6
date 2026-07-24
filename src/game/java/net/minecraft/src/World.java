@@ -73,7 +73,7 @@ public class World implements IBlockAccess {
 		this.field_27168_F = 0;
 		this.field_27172_i = 0;
 		this.editingBlocks = false;
-		this.lockTimestamp = System.currentTimeMillis();
+		this.lockTimestamp = EagRuntime.steadyTimeMillis();
 		this.autosavePeriod = 40;
 		this.rand = new Random();
 		this.isNewWorld = false;
@@ -113,7 +113,7 @@ public class World implements IBlockAccess {
 		this.field_27168_F = 0;
 		this.field_27172_i = 0;
 		this.editingBlocks = false;
-		this.lockTimestamp = System.currentTimeMillis();
+		this.lockTimestamp = EagRuntime.steadyTimeMillis();
 		this.autosavePeriod = 40;
 		this.rand = new Random();
 		this.isNewWorld = false;
@@ -158,7 +158,7 @@ public class World implements IBlockAccess {
 		this.field_27168_F = 0;
 		this.field_27172_i = 0;
 		this.editingBlocks = false;
-		this.lockTimestamp = System.currentTimeMillis();
+		this.lockTimestamp = EagRuntime.steadyTimeMillis();
 		this.autosavePeriod = 40;
 		this.rand = new Random();
 		this.isNewWorld = false;

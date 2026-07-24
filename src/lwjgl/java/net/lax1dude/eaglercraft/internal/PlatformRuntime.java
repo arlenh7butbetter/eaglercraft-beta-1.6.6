@@ -682,11 +682,11 @@ public class PlatformRuntime {
 	}
 
 	public static long steadyTimeMillis() {
-		return System.nanoTime() / 1000000l;
+		return EagRuntime.nanoTime() / 1000000l;
 	}
 
 	public static long nanoTime() {
-		return System.nanoTime();
+		return EagRuntime.nanoTime();
 	}
 
 	public static void sleep(int millis) {

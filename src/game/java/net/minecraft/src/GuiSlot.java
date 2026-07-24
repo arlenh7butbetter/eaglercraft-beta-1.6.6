@@ -135,10 +135,10 @@ public abstract class GuiSlot {
 					var10 = var2 - this.top - this.field_27261_r + (int)this.amountScrolled - 4;
 					var11 = var10 / this.posZ;
 					if(var1 >= var8 && var1 <= var9 && var11 >= 0 && var10 >= 0 && var11 < var4) {
-						boolean var12 = var11 == this.selectedElement && System.currentTimeMillis() - this.lastClicked < 250L;
+						boolean var12 = var11 == this.selectedElement && EagRuntime.steadyTimeMillis() - this.lastClicked < 250L;
 						this.elementClicked(var11, var12);
 						this.selectedElement = var11;
-						this.lastClicked = System.currentTimeMillis();
+						this.lastClicked = EagRuntime.steadyTimeMillis();
 					} else if(var1 >= var8 && var1 <= var9 && var10 < 0) {
 						this.func_27255_a(var1 - var8, var2 - this.top + (int)this.amountScrolled - 4);
 						var7 = false;
