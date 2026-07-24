@@ -1,3 +1,4 @@
+/*
 package net.minecraft.src;
 
 import java.io.DataInputStream;
@@ -135,3 +136,4 @@ public class ThreadDownloadResources extends Thread {
 		this.closing = true;
 	}
 }
+*/

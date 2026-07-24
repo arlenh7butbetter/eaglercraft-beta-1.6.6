@@ -558,7 +558,7 @@ public class Minecraft implements Runnable {
 		if(Keyboard.isKeyDown(Keyboard.KEY_F2)) {
 			if(!this.isTakingScreenshot) {
 				this.isTakingScreenshot = true;
-				this.ingameGUI.addChatMessage(ScreenShotHelper.saveScreenshot(minecraftDir, this.displayWidth, this.displayHeight));
+				this.ingameGUI.addChatMessage(ScreenShotHelper.saveScreenshot());
 			}
 		} else {
 			this.isTakingScreenshot = false;
