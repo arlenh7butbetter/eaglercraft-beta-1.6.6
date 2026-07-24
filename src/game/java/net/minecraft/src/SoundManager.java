@@ -1,7 +1,8 @@
 package net.minecraft.src;
 
-import java.io.File;
 import java.util.Random;
+
+import net.lax1dude.eaglercraft.internal.vfs2.VFile2;
 import paulscode.sound.SoundSystem;
 import paulscode.sound.SoundSystemConfig;
 import paulscode.sound.codecs.CodecJOrbis;
@@ -73,15 +74,15 @@ public class SoundManager {
 
 	}
 
-	public void addSound(String var1, File var2) {
+	public void addSound(String var1, VFile2 var2) {
 		this.soundPoolSounds.addSound(var1, var2);
 	}
 
-	public void addStreaming(String var1, File var2) {
+	public void addStreaming(String var1, VFile2 var2) {
 		this.soundPoolStreaming.addSound(var1, var2);
 	}
 
-	public void addMusic(String var1, File var2) {
+	public void addMusic(String var1, VFile2 var2) {
 		this.soundPoolMusic.addSound(var1, var2);
 	}
 

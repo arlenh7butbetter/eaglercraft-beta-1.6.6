@@ -751,47 +751,7 @@ public class Minecraft implements Runnable {
 	}
 
 	public void toggleFullscreen() {
-		try {
-			this.fullscreen = !this.fullscreen;
-			if(this.fullscreen) {
-				Display.setDisplayMode(Display.getDesktopDisplayMode());
-				this.displayWidth = Display.getDisplayMode().getWidth();
-				this.displayHeight = Display.getDisplayMode().getHeight();
-				if(this.displayWidth <= 0) {
-					this.displayWidth = 1;
-				}
-
-				if(this.displayHeight <= 0) {
-					this.displayHeight = 1;
-				}
-			} else {
-				if(this.mcCanvas != null) {
-					this.displayWidth = this.mcCanvas.getWidth();
-					this.displayHeight = this.mcCanvas.getHeight();
-				} else {
-					this.displayWidth = this.tempDisplayWidth;
-					this.displayHeight = this.tempDisplayHeight;
-				}
-
-				if(this.displayWidth <= 0) {
-					this.displayWidth = 1;
-				}
-
-				if(this.displayHeight <= 0) {
-					this.displayHeight = 1;
-				}
-			}
-
-			if(this.currentScreen != null) {
-				this.resize(this.displayWidth, this.displayHeight);
-			}
-
-			Display.setFullscreen(this.fullscreen);
-			Display.update();
-		} catch (Exception var2) {
-			var2.printStackTrace();
-		}
-
+		Display.toggleFullscreen();
 	}
 
 	private void resize(int var1, int var2) {
@@ -1273,7 +1233,7 @@ public class Minecraft implements Runnable {
 		this.theWorld.func_656_j();
 	}
 
-	public void installResource(String var1, File var2) {
+	public void installResource(String var1, VFile2 var2) {
 		int var3 = var1.indexOf("/");
 		String var4 = var1.substring(0, var3);
 		var1 = var1.substring(var3 + 1);
@@ -1372,36 +1332,7 @@ public class Minecraft implements Runnable {
 	}
 
 	public static void func_6269_a(String var0, String var1) {
-		startMainThread(var0, var1, (String)null);
-	}
 
-	public static void startMainThread(String var0, String var1, String var2) {
-		boolean var3 = false;
-		Frame var5 = new Frame("Minecraft");
-		Canvas var6 = new Canvas();
-		var5.setLayout(new BorderLayout());
-		var5.add(var6, "Center");
-		var6.setPreferredSize(new Dimension(854, 480));
-		var5.pack();
-		var5.setLocationRelativeTo((Component)null);
-		MinecraftImpl var7 = new MinecraftImpl(var5, var6, (MinecraftApplet)null, 854, 480, var3, var5);
-		Thread var8 = new Thread(var7, "Minecraft main thread");
-		var8.setPriority(10);
-		var7.minecraftUri = "www.minecraft.net";
-		if(var0 != null && var1 != null) {
-			var7.session = new Session(var0, var1);
-		} else {
-			var7.session = new Session("Player" + System.currentTimeMillis() % 1000L, "");
-		}
-
-		if(var2 != null) {
-			String[] var9 = var2.split(":");
-			var7.setServer(var9[0], Integer.parseInt(var9[1]));
-		}
-
-		var5.setVisible(true);
-		var5.addWindowListener(new GameWindowListener(var7, var8));
-		var8.start();
 	}
 
 	public NetClientHandler func_20001_q() {
