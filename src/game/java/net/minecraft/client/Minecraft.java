@@ -3,6 +3,8 @@ package net.minecraft.client;
 import net.lax1dude.eaglercraft.Display;
 import net.lax1dude.eaglercraft.internal.vfs2.VFile2;
 import net.lax1dude.eaglercraft.profile.EaglerProfile;
+import net.lax1dude.eaglercraft.Mouse;
+import net.lax1dude.eaglercraft.Keyboard;
 import net.minecraft.src.AchievementList;
 import net.minecraft.src.AxisAlignedBB;
 import net.minecraft.src.Block;
@@ -397,10 +399,7 @@ public class Minecraft implements Runnable {
 			}
 
 			this.sndManager.closeMinecraft();
-			Mouse.destroy();
-			Keyboard.destroy();
 		} finally {
-			Display.destroy();
 			if(!this.field_28004_R) {
 				System.exit(0);
 			}
@@ -427,13 +426,9 @@ public class Minecraft implements Runnable {
 
 			while(this.running) {
 				try {
-					if(this.mcApplet != null && !this.mcApplet.isActive()) {
-						break;
-					}
-
 					AxisAlignedBB.clearBoundingBoxPool();
 					Vec3D.initialize();
-					if(this.mcCanvas == null && Display.isCloseRequested()) {
+					if(Display.isCloseRequested()) {
 						this.shutdown();
 					}
 
@@ -505,19 +500,6 @@ public class Minecraft implements Runnable {
 					}
 
 					this.screenshotListener();
-					if(this.mcCanvas != null && !this.fullscreen && (this.mcCanvas.getWidth() != this.displayWidth || this.mcCanvas.getHeight() != this.displayHeight)) {
-						this.displayWidth = this.mcCanvas.getWidth();
-						this.displayHeight = this.mcCanvas.getHeight();
-						if(this.displayWidth <= 0) {
-							this.displayWidth = 1;
-						}
-
-						if(this.displayHeight <= 0) {
-							this.displayHeight = 1;
-						}
-
-						this.resize(this.displayWidth, this.displayHeight);
-					}
 
 					this.checkGLError("Post render");
 					++var3;

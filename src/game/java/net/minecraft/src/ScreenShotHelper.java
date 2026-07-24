@@ -7,6 +7,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.imageio.ImageIO;
+
+import net.lax1dude.eaglercraft.internal.vfs2.VFile2;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 
@@ -16,7 +18,7 @@ public class ScreenShotHelper {
 	private static byte[] pixelData;
 	private static int[] imageData;
 
-	public static String saveScreenshot(File var0, int var1, int var2) {
+	public static String saveScreenshot(VFile2 var0, int var1, int var2) {
 		try {
 			File var3 = new File(var0, "screenshots");
 			var3.mkdir();
