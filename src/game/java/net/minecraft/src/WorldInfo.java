@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import net.lax1dude.eaglercraft.EagRuntime;
+
 import java.util.List;
 
 public class WorldInfo {

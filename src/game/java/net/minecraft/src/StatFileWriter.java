@@ -22,13 +22,13 @@ public class StatFileWriter {
 			PlatformRuntime.writeCrashReport("not found VFile2 stats in net.minecraft.src.StatFileWriter");
 		}
 
-		File[] var4 = var2.listFiles();
+		VFile2[] var4 = var2.listFiles(true).toArray(new VFile2[0]);
 		int var5 = var4.length;
 
 		for(int var6 = 0; var6 < var5; ++var6) {
-			File var7 = var4[var6];
+			VFile2 var7 = var4[var6];
 			if(var7.getName().startsWith("stats_") && var7.getName().endsWith(".dat")) {
-				File var8 = new File(var3, var7.getName());
+				VFile2 var8 = new VFile2(var3, var7.getName());
 				if(!var8.exists()) {
 					System.out.println("Relocating " + var7.getName());
 					var7.renameTo(var8);

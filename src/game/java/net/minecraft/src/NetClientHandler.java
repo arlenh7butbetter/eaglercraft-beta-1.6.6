@@ -383,7 +383,7 @@ public class NetClientHandler extends NetHandler {
 			this.addToSendQueue(new Packet1Login(this.mc.session.username, 13));
 		} else {
 			try {
-				URL var2 = new URL("http://www.minecraft.net/game/joinserver.jsp?user=" + this.mc.session.username + "&sessionId=" + this.mc.session.sessionId + "&serverId=" + var1.username);
+				URL var2 = new URL("http://www.minecraft.net/game/joinserver.jsp?user=" + this.mc.session.username + "&sessionId=null" + "&serverId=" + var1.username);
 				BufferedReader var3 = new BufferedReader(new InputStreamReader(var2.openStream()));
 				String var4 = var3.readLine();
 				var3.close();

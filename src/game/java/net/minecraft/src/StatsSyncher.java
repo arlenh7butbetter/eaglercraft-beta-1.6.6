@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import net.lax1dude.eaglercraft.internal.vfs2.VFile2;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -23,7 +25,7 @@ public class StatsSyncher {
 	private int field_27427_l = 0;
 	private int field_27426_m = 0;
 
-	public StatsSyncher(Session var1, StatFileWriter var2, File var3) {
+	public StatsSyncher(Session var1, StatFileWriter var2, VFile2 var3) {
 		this.field_27434_e = new File(var3, "stats_" + var1.username.toLowerCase() + "_unsent.dat");
 		this.field_27433_f = new File(var3, "stats_" + var1.username.toLowerCase() + ".dat");
 		this.field_27430_i = new File(var3, "stats_" + var1.username.toLowerCase() + "_unsent.old");
@@ -119,7 +121,6 @@ public class StatsSyncher {
 		} else {
 			this.field_27427_l = 100;
 			this.field_27438_a = true;
-			(new ThreadStatSyncherReceive(this)).start();
 		}
 	}
 
@@ -129,7 +130,6 @@ public class StatsSyncher {
 		} else {
 			this.field_27427_l = 100;
 			this.field_27438_a = true;
-			(new ThreadStatSyncherSend(this, var1)).start();
 		}
 	}
 

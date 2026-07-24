@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import net.lax1dude.eaglercraft.EagRuntime;
+
 import java.io.BufferedOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -215,7 +217,6 @@ public class NetworkManager {
 		this.wakeThreads();
 		this.isServerTerminating = true;
 		this.readThread.interrupt();
-		(new ThreadCloseConnection(this)).start();
 	}
 
 	static boolean isRunning(NetworkManager var0) {
