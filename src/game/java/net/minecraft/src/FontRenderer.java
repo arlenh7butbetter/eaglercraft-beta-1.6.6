@@ -2,7 +2,7 @@ package net.minecraft.src;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.nio.IntBuffer;
+import net.lax1dude.eaglercraft.internal.buffer.IntBuffer;
 import javax.imageio.ImageIO;
 import org.lwjgl.opengl.GL11;
 

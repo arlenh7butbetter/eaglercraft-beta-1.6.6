@@ -1,14 +1,16 @@
 package net.minecraft.src;
 
-import java.nio.FloatBuffer;
+import net.lax1dude.eaglercraft.EagRuntime;
+import net.lax1dude.eaglercraft.internal.buffer.FloatBuffer;
 import java.util.List;
 import java.util.Random;
+
+import net.lax1dude.eaglercraft.opengl.GlStateManager;
+import net.lax1dude.eaglercraft.opengl.RealOpenGLEnums;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GLContext;
-import org.lwjgl.opengl.NVFogDistance;
 import org.lwjgl.util.glu.GLU;
 
 public class EntityRenderer {
@@ -904,9 +906,6 @@ public class EntityRenderer {
 				GL11.glFogf(GL11.GL_FOG_END, this.farPlaneDistance * 0.8F);
 			}
 
-			if(GLContext.getCapabilities().GL_NV_fog_distance) {
-				GL11.glFogi(NVFogDistance.GL_FOG_DISTANCE_MODE_NV, NVFogDistance.GL_EYE_RADIAL_NV);
-			}
 
 			if(this.mc.theWorld.worldProvider.isNether) {
 				GL11.glFogf(GL11.GL_FOG_START, 0.0F);

@@ -1,8 +1,8 @@
 package net.minecraft.src;
 
-import java.nio.ByteBuffer;
+import net.lax1dude.eaglercraft.internal.buffer.ByteBuffer;
 import java.nio.ByteOrder;
-import java.nio.IntBuffer;
+import net.lax1dude.eaglercraft.internal.buffer.IntBuffer;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -2,91 +2,59 @@ package net.minecraft.src;
 
 import java.util.Random;
 
+import net.lax1dude.eaglercraft.internal.IAudioHandle;
 import net.lax1dude.eaglercraft.internal.vfs2.VFile2;
-import paulscode.sound.SoundSystem;
-import paulscode.sound.SoundSystemConfig;
-import paulscode.sound.codecs.CodecJOrbis;
-import paulscode.sound.codecs.CodecWav;
-import paulscode.sound.libraries.LibraryLWJGLOpenAL;
 
 public class SoundManager {
-	private static SoundSystem sndSystem;
 	private SoundPool soundPoolSounds = new SoundPool();
 	private SoundPool soundPoolStreaming = new SoundPool();
 	private SoundPool soundPoolMusic = new SoundPool();
 	private int field_587_e = 0;
 	private GameSettings options;
+
+	private IAudioHandle musicHandle;
 	private static boolean loaded = false;
 	private Random rand = new Random();
 	private int ticksBeforeMusic = this.rand.nextInt(12000);
 
 	public void loadSoundSettings(GameSettings var1) {
-		this.soundPoolStreaming.field_1657_b = false;
-		this.options = var1;
-		if(!loaded && (var1 == null || var1.soundVolume != 0.0F || var1.musicVolume != 0.0F)) {
-			this.tryToSetLibraryAndCodecs();
-		}
 
 	}
 
-	private void tryToSetLibraryAndCodecs() {
-		try {
-			float var1 = this.options.soundVolume;
-			float var2 = this.options.musicVolume;
-			this.options.soundVolume = 0.0F;
-			this.options.musicVolume = 0.0F;
-			this.options.saveOptions();
-			SoundSystemConfig.addLibrary(LibraryLWJGLOpenAL.class);
-			SoundSystemConfig.setCodec("ogg", CodecJOrbis.class);
-			SoundSystemConfig.setCodec("mus", CodecMus.class);
-			SoundSystemConfig.setCodec("wav", CodecWav.class);
-			sndSystem = new SoundSystem();
-			this.options.soundVolume = var1;
-			this.options.musicVolume = var2;
-			this.options.saveOptions();
-		} catch (Throwable var3) {
-			var3.printStackTrace();
-			System.err.println("error linking with the LibraryJavaSound plug-in");
-		}
-
-		loaded = true;
-	}
 
 	public void onSoundOptionsChanged() {
-		if(!loaded && (this.options.soundVolume != 0.0F || this.options.musicVolume != 0.0F)) {
-			this.tryToSetLibraryAndCodecs();
-		}
-
-		if(loaded) {
-			if(this.options.musicVolume == 0.0F) {
-				sndSystem.stop("BgMusic");
-			} else {
-				sndSystem.setVolume("BgMusic", this.options.musicVolume);
+		if(this.options.musicVolume == 0.0F) {
+			if(this.musicHandle != null && !this.musicHandle.shouldFree()) {
+				musicHandle.end();
+			}
+		} else {
+			if(this.musicHandle != null && !this.musicHandle.shouldFree()) {
+				musicHandle.gain(this.options.musicVolume);
 			}
 		}
 
 	}
 
 	public void closeMinecraft() {
-		if(loaded) {
-			sndSystem.cleanup();
-		}
+
 
 	}
 
 	public void addSound(String var1, VFile2 var2) {
-		this.soundPoolSounds.addSound(var1, var2);
+
 	}
 
 	public void addStreaming(String var1, VFile2 var2) {
-		this.soundPoolStreaming.addSound(var1, var2);
+
 	}
 
 	public void addMusic(String var1, VFile2 var2) {
-		this.soundPoolMusic.addSound(var1, var2);
+
 	}
 
 	public void playRandomMusicIfReady() {
+		//TODO: DO THIS SHIT
+		/*
 		if(loaded && this.options.musicVolume != 0.0F) {
 			if(!sndSystem.playing("BgMusic") && !sndSystem.playing("streaming")) {
 				if(this.ticksBeforeMusic > 0) {
@@ -99,14 +67,18 @@ public class SoundManager {
 					this.ticksBeforeMusic = this.rand.nextInt(12000) + 12000;
 					sndSystem.backgroundMusic("BgMusic", var1.soundUrl, var1.soundName, false);
 					sndSystem.setVolume("BgMusic", this.options.musicVolume);
-					sndSystem.play("BgMusic");
+					PlatformAudio.beginPlayback("BgMusic");
 				}
 			}
 
 		}
+
+		 */
 	}
 
 	public void func_338_a(EntityLiving var1, float var2) {
+		//TODO: DO THIS SHIT
+		/*
 		if(loaded && this.options.soundVolume != 0.0F) {
 			if(var1 != null) {
 				float var3 = var1.prevRotationYaw + (var1.rotationYaw - var1.prevRotationYaw) * var2;
@@ -125,9 +97,14 @@ public class SoundManager {
 				sndSystem.setListenerOrientation(var12, var13, var14, var15, var16, var17);
 			}
 		}
+
+		 */
 	}
 
 	public void playStreaming(String var1, float var2, float var3, float var4, float var5, float var6) {
+
+		//TODO: STOP BEING A LAZY BUM
+		/*
 		if(loaded && this.options.soundVolume != 0.0F) {
 			String var7 = "streaming";
 			if(sndSystem.playing("streaming")) {
@@ -149,9 +126,13 @@ public class SoundManager {
 
 			}
 		}
+
+		 */
 	}
 
 	public void playSound(String var1, float var2, float var3, float var4, float var5, float var6) {
+		//TODO: STOP BEING LAZY
+		/*
 		if(loaded && this.options.soundVolume != 0.0F) {
 			SoundPoolEntry var7 = this.soundPoolSounds.getRandomSoundFromSoundPool(var1);
 			if(var7 != null && var5 > 0.0F) {
@@ -173,9 +154,13 @@ public class SoundManager {
 			}
 
 		}
+
+		 */
 	}
 
 	public void playSoundFX(String var1, float var2, float var3) {
+		//TODO: not be a BUM
+		/*
 		if(loaded && this.options.soundVolume != 0.0F) {
 			SoundPoolEntry var4 = this.soundPoolSounds.getRandomSoundFromSoundPool(var1);
 			if(var4 != null) {
@@ -193,5 +178,7 @@ public class SoundManager {
 			}
 
 		}
+
+		 */
 	}
 }

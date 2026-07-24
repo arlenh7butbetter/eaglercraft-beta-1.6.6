@@ -1,6 +1,6 @@
 package net.minecraft.src;
 
-import java.nio.IntBuffer;
+import net.lax1dude.eaglercraft.internal.buffer.IntBuffer;
 import org.lwjgl.opengl.GL11;
 
 public class RenderList {

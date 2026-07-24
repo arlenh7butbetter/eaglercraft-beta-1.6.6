@@ -4,13 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96d45f5d-4b72-405d-86c2-aba6a11a1aea" name="Changes" comment="minecraft.java clean + switch to eagruntime for time">
+    <list default="true" id="96d45f5d-4b72-405d-86c2-aba6a11a1aea" name="Changes" comment="change some buffer imports, stub the FUCK out of soundmanager">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwjgl/java/net/lax1dude/eaglercraft/internal/PlatformInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwjgl/java/net/lax1dude/eaglercraft/internal/PlatformInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lwjgl/java/net/lax1dude/eaglercraft/internal/PlatformRuntime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwjgl/java/net/lax1dude/eaglercraft/internal/PlatformRuntime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/carrotsearch/hppc/Containers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carrotsearch/hppc/Containers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/apache/logging/log4j/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/apache/logging/log4j/Logger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teavm/java/net/lax1dude/eaglercraft/internal/teavm/EPKDownloadHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teavm/java/net/lax1dude/eaglercraft/internal/teavm/EPKDownloadHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/client/Minecraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/client/Minecraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/FontRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/FontRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GLAllocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GLAllocation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/MouseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/MouseHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/OpenGlCapsChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/OpenGlCapsChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/RenderEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/RenderEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/RenderGlobal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/RenderGlobal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/RenderHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/RenderHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/RenderList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/RenderList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ScreenShotHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ScreenShotHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/SoundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/SoundManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/Tessellator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/Tessellator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ThreadDownloadResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ThreadDownloadResources.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/lax1dude/eaglercraft/internal/EnumPlatformOS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/lax1dude/eaglercraft/internal/EnumPlatformOS.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +139,23 @@
       <option name="project" value="LOCAL" />
       <updated>1784877730843</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="whoopsy doo">
+      <option name="closed" value="true" />
+      <created>1784877908930</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1784877908930</updated>
+    </task>
+    <task id="LOCAL-00006" summary="most useful change ever, added EagRuntime.destroy to shutdownMinecraftApplet">
+      <option name="closed" value="true" />
+      <created>1784878017284</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1784878017284</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -137,6 +163,9 @@
     <MESSAGE value="removed some mccanvas bs from minecraft.java" />
     <MESSAGE value="minecraft.java clean woohoo" />
     <MESSAGE value="minecraft.java clean + switch to eagruntime for time" />
-    <option name="LAST_COMMIT_MESSAGE" value="minecraft.java clean + switch to eagruntime for time" />
+    <MESSAGE value="whoopsy doo" />
+    <MESSAGE value="most useful change ever, added EagRuntime.destroy to shutdownMinecraftApplet" />
+    <MESSAGE value="change some buffer imports, stub the FUCK out of soundmanager" />
+    <option name="LAST_COMMIT_MESSAGE" value="change some buffer imports, stub the FUCK out of soundmanager" />
   </component>
 </project>

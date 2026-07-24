@@ -1,9 +1,11 @@
+/*
+
 package net.minecraft.src;
 
-import java.nio.ByteBuffer;
+import net.lax1dude.eaglercraft.internal.buffer.ByteBuffer;
 import java.nio.ByteOrder;
-import java.nio.FloatBuffer;
-import java.nio.IntBuffer;
+import net.lax1dude.eaglercraft.internal.buffer.FloatBuffer;
+import net.lax1dude.eaglercraft.internal.buffer.IntBuffer;
 import org.lwjgl.opengl.ARBVertexBufferObject;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL15;
@@ -315,3 +317,4 @@ public class Tessellator {
 		this.zOffset += (double)var3;
 	}
 }
+*/

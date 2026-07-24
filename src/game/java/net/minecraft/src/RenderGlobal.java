@@ -1,15 +1,16 @@
 package net.minecraft.src;
 
-import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
+
+import net.lax1dude.eaglercraft.EagRuntime;
+import net.lax1dude.eaglercraft.Random;
+import net.lax1dude.eaglercraft.internal.buffer.IntBuffer;
+import net.lax1dude.eaglercraft.opengl.GlStateManager;
 import net.minecraft.client.Minecraft;
-import org.lwjgl.opengl.ARBOcclusionQuery;
 import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL15;
 
 public class RenderGlobal implements IWorldAccess {
 	public List tileEntities = new ArrayList();
@@ -71,7 +72,7 @@ public class RenderGlobal implements IWorldAccess {
 			this.glOcclusionQueryBase.clear();
 			this.glOcclusionQueryBase.position(0);
 			this.glOcclusionQueryBase.limit(var3 * var3 * var3);
-			ARBOcclusionQuery.glGenQueriesARB(this.glOcclusionQueryBase);
+			// idfk bro ARBOcclusionQuery.glGenQueriesARB(this.glOcclusionQueryBase);
 		}
 
 		this.starGLCallList = GLAllocation.generateDisplayLists(3);
@@ -478,9 +479,9 @@ public class RenderGlobal implements IWorldAccess {
 									var22 += var32;
 								}
 
-								ARBOcclusionQuery.glBeginQueryARB(GL15.GL_SAMPLES_PASSED, this.sortedWorldRenderers[var23].glOcclusionQuery);
+								//TODO: ARBOcclusionQuery.glBeginQueryARB(GL15.GL_SAMPLES_PASSED, this.sortedWorldRenderers[var23].glOcclusionQuery);
 								this.sortedWorldRenderers[var23].callOcclusionQueryList();
-								ARBOcclusionQuery.glEndQueryARB(GL15.GL_SAMPLES_PASSED);
+								//TODO: ARBOcclusionQuery.glEndQueryARB(GL15.GL_SAMPLES_PASSED);
 								this.sortedWorldRenderers[var23].isWaitingOnOcclusionQuery = true;
 							}
 						}
@@ -515,11 +516,11 @@ public class RenderGlobal implements IWorldAccess {
 		for(int var3 = var1; var3 < var2; ++var3) {
 			if(this.sortedWorldRenderers[var3].isWaitingOnOcclusionQuery) {
 				this.occlusionResult.clear();
-				ARBOcclusionQuery.glGetQueryObjectuARB(this.sortedWorldRenderers[var3].glOcclusionQuery, GL15.GL_QUERY_RESULT_AVAILABLE, this.occlusionResult);
+				//TODO: ARBOcclusionQuery.glGetQueryObjectuARB(this.sortedWorldRenderers[var3].glOcclusionQuery, GL15.GL_QUERY_RESULT_AVAILABLE, this.occlusionResult);
 				if(this.occlusionResult.get(0) != 0) {
 					this.sortedWorldRenderers[var3].isWaitingOnOcclusionQuery = false;
 					this.occlusionResult.clear();
-					ARBOcclusionQuery.glGetQueryObjectuARB(this.sortedWorldRenderers[var3].glOcclusionQuery, GL15.GL_QUERY_RESULT, this.occlusionResult);
+					//TODO: ARBOcclusionQuery.glGetQueryObjectuARB(this.sortedWorldRenderers[var3].glOcclusionQuery, GL15.GL_QUERY_RESULT, this.occlusionResult);
 					this.sortedWorldRenderers[var3].isVisible = this.occlusionResult.get(0) != 0;
 				}
 			}
@@ -1071,7 +1072,7 @@ public class RenderGlobal implements IWorldAccess {
 		GL11.glEnable(GL11.GL_BLEND);
 		GL11.glEnable(GL11.GL_ALPHA_TEST);
 		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE);
-		GL11.glColor4f(1.0F, 1.0F, 1.0F, (MathHelper.sin((float)EagRuntime.steadyTimeMillis() / 100.0F) * 0.2F + 0.4F) * 0.5F);
+		GL11.glColor4f(1.0F, 1.0F, 1.0F, (MathHelper.sin((float) EagRuntime.steadyTimeMillis() / 100.0F) * 0.2F + 0.4F) * 0.5F);
 		int var8;
 		if(var3 == 0) {
 			if(this.damagePartialTime > 0.0F) {

@@ -1,6 +1,6 @@
 package net.minecraft.src;
 
-import java.nio.FloatBuffer;
+import net.lax1dude.eaglercraft.internal.buffer.FloatBuffer;
 import org.lwjgl.opengl.GL11;
 
 public class RenderHelper {
