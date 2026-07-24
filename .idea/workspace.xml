@@ -4,23 +4,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96d45f5d-4b72-405d-86c2-aba6a11a1aea" name="Changes" comment="change some buffer imports, stub the FUCK out of soundmanager">
+    <list default="true" id="96d45f5d-4b72-405d-86c2-aba6a11a1aea" name="Changes" comment="fixed bs with ThreadDownloadResources (WE ALREADY HAVE THE FUCKING RESOURCES!!!)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/client/Minecraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/client/Minecraft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/FontRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/FontRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GLAllocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GLAllocation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/MouseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/MouseHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/OpenGlCapsChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/OpenGlCapsChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityDiggingFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityDiggingFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityExplodeFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityExplodeFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityFlameFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityFlameFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityFootStepFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityFootStepFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityHeartFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityHeartFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityLavaFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityLavaFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityNoteFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityNoteFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityPickupFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityPickupFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityPortalFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityPortalFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityRainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityRainFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityReddustFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntityReddustFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntitySlimeFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntitySlimeFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntitySmokeFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntitySmokeFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntitySnowShovelFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/EntitySnowShovelFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GuiSlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GuiSlot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GuiSlotStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GuiSlotStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GuiSlotStatsBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GuiSlotStatsBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GuiSlotStatsGeneral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GuiSlotStatsGeneral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GuiSlotStatsItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GuiSlotStatsItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GuiTexturePackSlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GuiTexturePackSlot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GuiTexturePacks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GuiTexturePacks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GuiWorldSlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/GuiWorldSlot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/MinecraftAppletImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/MinecraftImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/PanelCrashReport.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/RenderEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/RenderEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/RenderGlobal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/RenderGlobal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/RenderHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/RenderHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/RenderList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/RenderList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ScreenShotHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ScreenShotHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/SoundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/SoundManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/Tessellator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/Tessellator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ThreadDownloadResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ThreadDownloadResources.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/lax1dude/eaglercraft/internal/EnumPlatformOS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/lax1dude/eaglercraft/internal/EnumPlatformOS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/RenderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/RenderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/TexturedQuad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/TexturedQuad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ThreadCheckHasPaid.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ThreadCloseConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ThreadConnectToServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ThreadDownloadImage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ThreadDownloadImageData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ThreadDownloadResources.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ThreadRunIsoClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ThreadSleepForever.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ThreadStatSyncherReceive.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/ThreadStatSyncherSend.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/Timer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/src/WorldRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/src/WorldRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/lax1dude/eaglercraft/beta/TextureNewClockFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/lax1dude/eaglercraft/beta/TextureNewClockFX.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +183,31 @@
       <option name="project" value="LOCAL" />
       <updated>1784878017284</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="change some buffer imports, stub the FUCK out of soundmanager and tesselator, fix some other imports">
+      <option name="closed" value="true" />
+      <created>1784879437391</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1784879437391</updated>
+    </task>
+    <task id="LOCAL-00008" summary="stubbed ThreadDownloadResources, fixed enumplatformos">
+      <option name="closed" value="true" />
+      <created>1784879474570</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1784879474570</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fixed bs with ThreadDownloadResources (WE ALREADY HAVE THE FUCKING RESOURCES!!!)">
+      <option name="closed" value="true" />
+      <created>1784879549894</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1784879549894</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -166,6 +218,9 @@
     <MESSAGE value="whoopsy doo" />
     <MESSAGE value="most useful change ever, added EagRuntime.destroy to shutdownMinecraftApplet" />
     <MESSAGE value="change some buffer imports, stub the FUCK out of soundmanager" />
-    <option name="LAST_COMMIT_MESSAGE" value="change some buffer imports, stub the FUCK out of soundmanager" />
+    <MESSAGE value="change some buffer imports, stub the FUCK out of soundmanager and tesselator, fix some other imports" />
+    <MESSAGE value="stubbed ThreadDownloadResources, fixed enumplatformos" />
+    <MESSAGE value="fixed bs with ThreadDownloadResources (WE ALREADY HAVE THE FUCKING RESOURCES!!!)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bs with ThreadDownloadResources (WE ALREADY HAVE THE FUCKING RESOURCES!!!)" />
   </component>
 </project>

@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import net.peyton.eagler.minecraft.Tessellator;
+
 class GuiSlotStatsGeneral extends GuiSlot {
 	final GuiStats field_27276_a;
 

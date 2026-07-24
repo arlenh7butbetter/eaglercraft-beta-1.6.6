@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import net.peyton.eagler.minecraft.Tessellator;
+
 public class TexturedQuad {
 	public PositionTextureVertex[] vertexPositions;
 	public int nVertices;

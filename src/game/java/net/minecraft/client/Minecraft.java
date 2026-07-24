@@ -27,7 +27,6 @@ import net.minecraft.src.EnumOptions;
 import net.minecraft.src.FontRenderer;
 import net.minecraft.src.GLAllocation;
 import net.minecraft.src.GameSettings;
-import net.minecraft.src.GameWindowListener;
 import net.minecraft.src.GuiAchievement;
 import net.minecraft.src.GuiChat;
 import net.minecraft.src.GuiConflictWarning;
@@ -50,7 +49,6 @@ import net.minecraft.src.LoadingScreenRenderer;
 import net.minecraft.src.MathHelper;
 import net.minecraft.src.MinecraftError;
 import net.minecraft.src.MinecraftException;
-import net.minecraft.src.MinecraftImpl;
 import net.minecraft.src.ModelBiped;
 import net.minecraft.src.MouseHelper;
 import net.minecraft.src.MovementInputFromOptions;
@@ -81,7 +79,6 @@ import net.minecraft.src.TexturePortalFX;
 import net.minecraft.src.TextureWatchFX;
 import net.minecraft.src.TextureWaterFX;
 import net.minecraft.src.TextureWaterFlowFX;
-import net.minecraft.src.ThreadCheckHasPaid;
 import net.minecraft.src.Timer;
 import net.minecraft.src.UnexpectedThrowable;
 import net.minecraft.src.Vec3D;
@@ -1017,6 +1014,10 @@ public class Minecraft implements Runnable {
 		}
 
 		this.systemTime = EagRuntime.steadyTimeMillis();
+	}
+
+	public static Minecraft getMinecraft() {
+		return theMinecraft;
 	}
 
 	private void forceReload() {

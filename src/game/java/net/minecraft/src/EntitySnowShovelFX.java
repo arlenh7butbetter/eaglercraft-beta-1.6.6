@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import net.peyton.eagler.minecraft.Tessellator;
+
 public class EntitySnowShovelFX extends EntityFX {
 	float field_27017_a;
 

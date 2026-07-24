@@ -1,8 +1,9 @@
 package net.minecraft.src;
 
 import java.io.File;
+
+import net.lax1dude.eaglercraft.internal.vfs2.VFile2;
 import net.minecraft.client.Minecraft;
-import org.lwjgl.Sys;
 
 public class GuiTexturePacks extends GuiScreen {
 	protected GuiScreen guiScreen;
@@ -16,19 +17,16 @@ public class GuiTexturePacks extends GuiScreen {
 
 	public void initGui() {
 		StringTranslate var1 = StringTranslate.getInstance();
-		this.controlList.add(new GuiSmallButton(5, this.width / 2 - 154, this.height - 48, var1.translateKey("texturePack.openFolder")));
 		this.controlList.add(new GuiSmallButton(6, this.width / 2 + 4, this.height - 48, var1.translateKey("gui.done")));
 		this.mc.texturePackList.updateAvaliableTexturePacks();
-		this.fileLocation = (new File(Minecraft.getMinecraftDir(), "texturepacks")).getAbsolutePath();
+		this.fileLocation = (new VFile2(Minecraft.getMinecraftDir(), "texturepacks")).getPath();
 		this.guiTexturePackSlot = new GuiTexturePackSlot(this);
 		this.guiTexturePackSlot.registerScrollButtons(this.controlList, 7, 8);
 	}
 
 	protected void actionPerformed(GuiButton var1) {
 		if(var1.enabled) {
-			if(var1.id == 5) {
-				Sys.openURL("file://" + this.fileLocation);
-			} else if(var1.id == 6) {
+			if(var1.id == 6) {
 				this.mc.renderEngine.refreshTextures();
 				this.mc.displayGuiScreen(this.guiScreen);
 			} else {

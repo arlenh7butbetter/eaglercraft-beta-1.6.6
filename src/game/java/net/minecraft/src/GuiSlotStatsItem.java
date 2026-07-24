@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import net.peyton.eagler.minecraft.Tessellator;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 

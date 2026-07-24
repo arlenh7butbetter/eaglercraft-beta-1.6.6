@@ -3,6 +3,8 @@ package net.minecraft.src;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+
+import net.peyton.eagler.minecraft.Tessellator;
 import org.lwjgl.opengl.GL11;
 
 public class WorldRenderer {

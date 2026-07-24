@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import net.peyton.eagler.minecraft.Tessellator;
+
 public class EntityNoteFX extends EntityFX {
 	float field_21065_a;
 

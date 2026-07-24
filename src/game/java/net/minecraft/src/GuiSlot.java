@@ -2,6 +2,7 @@ package net.minecraft.src;
 
 import java.util.List;
 import net.minecraft.client.Minecraft;
+import net.peyton.eagler.minecraft.Tessellator;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 

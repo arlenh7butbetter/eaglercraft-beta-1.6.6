@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import net.lax1dude.eaglercraft.EagRuntime;
+
 public class Timer {
 	public float ticksPerSecond;
 	private double lastHRTime;

@@ -1,6 +1,8 @@
 package net.minecraft.src;
 
 import java.util.Random;
+
+import net.peyton.eagler.minecraft.Tessellator;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 

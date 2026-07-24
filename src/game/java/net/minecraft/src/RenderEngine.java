@@ -14,6 +14,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import javax.imageio.ImageIO;
+
+import net.lax1dude.eaglercraft.opengl.EaglercraftGPU;
+import net.lax1dude.eaglercraft.opengl.GlStateManager;
 import org.lwjgl.opengl.GL11;
 
 public class RenderEngine {
@@ -299,36 +302,21 @@ public class RenderEngine {
 		this.singleIntBuffer.clear();
 		this.singleIntBuffer.put(var1);
 		this.singleIntBuffer.flip();
-		GL11.glDeleteTextures(this.singleIntBuffer);
+		for (int i = 0; i < this.singleIntBuffer.capacity(); i++) {
+			GlStateManager.deleteTexture(i);
+		}
 	}
 
 	public int getTextureForDownloadableImage(String var1, String var2) {
-		ThreadDownloadImageData var3 = (ThreadDownloadImageData)this.urlToImageDataMap.get(var1);
-		if(var3 != null && var3.image != null && !var3.textureSetupComplete) {
-			if(var3.textureName < 0) {
-				var3.textureName = this.allocateAndSetupTexture(var3.image);
-			} else {
-				this.setupTexture(var3.image, var3.textureName);
-			}
-
-			var3.textureSetupComplete = true;
-		}
-
-		return var3 != null && var3.textureName >= 0 ? var3.textureName : (var2 == null ? -1 : this.getTexture(var2));
+		// GET STUBBED
+		return 0;
 	}
 
-	public ThreadDownloadImageData obtainImageData(String var1, ImageBuffer var2) {
-		ThreadDownloadImageData var3 = (ThreadDownloadImageData)this.urlToImageDataMap.get(var1);
-		if(var3 == null) {
-			this.urlToImageDataMap.put(var1, new ThreadDownloadImageData(var1, var2));
-		} else {
-			++var3.referenceCount;
-		}
 
-		return var3;
-	}
 
 	public void releaseImageData(String var1) {
+		// GET STUBBED
+		/*
 		ThreadDownloadImageData var2 = (ThreadDownloadImageData)this.urlToImageDataMap.get(var1);
 		if(var2 != null) {
 			--var2.referenceCount;
@@ -341,6 +329,8 @@ public class RenderEngine {
 			}
 		}
 
+
+		 */
 	}
 
 	public void registerTextureFX(TextureFX var1) {
@@ -467,10 +457,7 @@ public class RenderEngine {
 			this.setupTexture(var4, var3);
 		}
 
-		ThreadDownloadImageData var8;
-		for(var2 = this.urlToImageDataMap.values().iterator(); var2.hasNext(); var8.textureSetupComplete = false) {
-			var8 = (ThreadDownloadImageData)var2.next();
-		}
+
 
 		var2 = this.textureMap.keySet().iterator();
 
