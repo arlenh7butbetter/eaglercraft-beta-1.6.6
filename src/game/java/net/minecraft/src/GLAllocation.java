@@ -2,10 +2,11 @@ package net.minecraft.src;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.List;
+
+import net.lax1dude.eaglercraft.internal.buffer.FloatBuffer;
 import org.lwjgl.opengl.GL11;
 
 public class GLAllocation {

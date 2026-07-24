@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
+import net.lax1dude.eaglercraft.internal.vfs2.VFile2;
 import net.minecraft.client.Minecraft;
 
 public class TexturePackList {
@@ -18,7 +20,7 @@ public class TexturePackList {
 	private File texturePackDir;
 	private String currentTexturePack;
 
-	public TexturePackList(Minecraft var1, File var2) {
+	public TexturePackList(Minecraft var1, VFile2 var2) {
 		this.mc = var1;
 		this.texturePackDir = new File(var2, "texturepacks");
 		if(!this.texturePackDir.exists()) {

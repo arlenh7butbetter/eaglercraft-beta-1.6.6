@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+
+import net.lax1dude.eaglercraft.internal.vfs2.VFile2;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.input.Keyboard;
 
@@ -56,7 +58,7 @@ public class GameSettings {
 		this.loadOptions();
 	}
 
-	public GameSettings() {
+	public GameSettings(Minecraft var1, VFile2 mcDataDir) {
 	}
 
 	public String getKeyBindingDescription(int var1) {

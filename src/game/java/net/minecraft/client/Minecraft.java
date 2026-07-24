@@ -1,13 +1,8 @@
 package net.minecraft.client;
 
-import java.awt.BorderLayout;
-import java.awt.Canvas;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.Frame;
-import java.awt.Graphics;
-import java.io.File;
+import net.lax1dude.eaglercraft.Display;
+import net.lax1dude.eaglercraft.internal.vfs2.VFile2;
+import net.lax1dude.eaglercraft.profile.EaglerProfile;
 import net.minecraft.src.AchievementList;
 import net.minecraft.src.AxisAlignedBB;
 import net.minecraft.src.Block;
@@ -94,15 +89,10 @@ import net.minecraft.src.World;
 import net.minecraft.src.WorldProvider;
 import net.minecraft.src.WorldRenderer;
 import org.lwjgl.LWJGLException;
-import org.lwjgl.input.Controllers;
-import org.lwjgl.input.Keyboard;
-import org.lwjgl.input.Mouse;
-import org.lwjgl.opengl.Display;
-import org.lwjgl.opengl.DisplayMode;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.glu.GLU;
 
-public abstract class Minecraft implements Runnable {
+public class Minecraft implements Runnable {
 	public static byte[] field_28006_b = new byte[10485760];
 	private static Minecraft theMinecraft;
 	public PlayerController playerController;
@@ -119,7 +109,6 @@ public abstract class Minecraft implements Runnable {
 	public EffectRenderer effectRenderer;
 	public Session session = null;
 	public String minecraftUri;
-	public Canvas mcCanvas;
 	public boolean hideQuitButton = true;
 	public volatile boolean isGamePaused = false;
 	public RenderEngine renderEngine;
@@ -138,11 +127,10 @@ public abstract class Minecraft implements Runnable {
 	public ModelBiped field_9242_w = new ModelBiped(0.0F);
 	public MovingObjectPosition objectMouseOver = null;
 	public GameSettings gameSettings;
-	protected MinecraftApplet mcApplet;
 	public SoundManager sndManager = new SoundManager();
 	public MouseHelper mouseHelper;
 	public TexturePackList texturePackList;
-	private File mcDataDir;
+	private VFile2 mcDataDir;
 	private ISaveFormat saveLoader;
 	public static long[] frameTimes = new long[512];
 	public static long[] tickTimes = new long[512];
@@ -153,7 +141,7 @@ public abstract class Minecraft implements Runnable {
 	private int serverPort;
 	private TextureWaterFX textureWaterFX = new TextureWaterFX();
 	private TextureLavaFX textureLavaFX = new TextureLavaFX();
-	private static File minecraftDir = null;
+	private static VFile2 minecraftDir = null;
 	public volatile boolean running = true;
 	public String debug = "";
 	boolean isTakingScreenshot = false;
@@ -164,29 +152,18 @@ public abstract class Minecraft implements Runnable {
 	long systemTime = System.currentTimeMillis();
 	private int joinPlayerCounter = 0;
 
-	public Minecraft(Component var1, Canvas var2, MinecraftApplet var3, int var4, int var5, boolean var6) {
+	public Minecraft() {
 		StatList.func_27360_a();
-		this.tempDisplayHeight = var5;
-		this.fullscreen = var6;
-		this.mcApplet = var3;
 		new ThreadSleepForever(this, "Timer hack thread");
-		this.mcCanvas = var2;
-		this.displayWidth = var4;
-		this.displayHeight = var5;
-		this.fullscreen = var6;
-		if(var3 == null || "true".equals(var3.getParameter("stand-alone"))) {
-			this.hideQuitButton = false;
-		}
-
+		this.displayWidth = Display.getWidth();
+		this.displayHeight = Display.getHeight();
+		this.session = new Session(EaglerProfile.getName());
 		theMinecraft = this;
 	}
 
 	public void func_28003_b(UnexpectedThrowable var1) {
 		this.field_28004_R = true;
-		this.displayUnexpectedThrowable(var1);
 	}
-
-	public abstract void displayUnexpectedThrowable(UnexpectedThrowable var1);
 
 	public void setServer(String var1, int var2) {
 		this.serverName = var1;
@@ -194,47 +171,10 @@ public abstract class Minecraft implements Runnable {
 	}
 
 	public void startGame() throws LWJGLException {
-		if(this.mcCanvas != null) {
-			Graphics var1 = this.mcCanvas.getGraphics();
-			if(var1 != null) {
-				var1.setColor(Color.BLACK);
-				var1.fillRect(0, 0, this.displayWidth, this.displayHeight);
-				var1.dispose();
-			}
-
-			Display.setParent(this.mcCanvas);
-		} else if(this.fullscreen) {
-			Display.setFullscreen(true);
-			this.displayWidth = Display.getDisplayMode().getWidth();
-			this.displayHeight = Display.getDisplayMode().getHeight();
-			if(this.displayWidth <= 0) {
-				this.displayWidth = 1;
-			}
-
-			if(this.displayHeight <= 0) {
-				this.displayHeight = 1;
-			}
-		} else {
-			Display.setDisplayMode(new DisplayMode(this.displayWidth, this.displayHeight));
-		}
-
 		Display.setTitle("Minecraft Minecraft Beta 1.6.6");
 
-		try {
-			Display.create();
-		} catch (LWJGLException var6) {
-			var6.printStackTrace();
-
-			try {
-				Thread.sleep(1000L);
-			} catch (InterruptedException var5) {
-			}
-
-			Display.create();
-		}
-
 		this.mcDataDir = getMinecraftDir();
-		this.saveLoader = new SaveConverterMcRegion(new File(this.mcDataDir, "saves"));
+		this.saveLoader = new SaveConverterMcRegion(new VFile2(this.mcDataDir, "saves"));
 		this.gameSettings = new GameSettings(this, this.mcDataDir);
 		this.texturePackList = new TexturePackList(this, this.mcDataDir);
 		this.renderEngine = new RenderEngine(this.texturePackList, this.gameSettings);
@@ -247,15 +187,6 @@ public abstract class Minecraft implements Runnable {
 		this.statFileWriter = new StatFileWriter(this.session, this.mcDataDir);
 		AchievementList.openInventory.setStatStringFormatter(new StatStringFormatKeyInv(this));
 		this.loadScreen();
-		Keyboard.create();
-		Mouse.create();
-		this.mouseHelper = new MouseHelper(this.mcCanvas);
-
-		try {
-			Controllers.create();
-		} catch (Exception var4) {
-			var4.printStackTrace();
-		}
 
 		this.checkGLError("Pre startup");
 		GL11.glEnable(GL11.GL_TEXTURE_2D);
@@ -333,7 +264,6 @@ public abstract class Minecraft implements Runnable {
 		GL11.glDisable(GL11.GL_FOG);
 		GL11.glEnable(GL11.GL_ALPHA_TEST);
 		GL11.glAlphaFunc(GL11.GL_GREATER, 0.1F);
-		Display.swapBuffers();
 	}
 
 	public void func_6274_a(int var1, int var2, int var3, int var4, int var5, int var6) {
@@ -348,7 +278,7 @@ public abstract class Minecraft implements Runnable {
 		var9.draw();
 	}
 
-	public static File getMinecraftDir() {
+	public static VFile2 getMinecraftDir() {
 		if(minecraftDir == null) {
 			minecraftDir = getAppDir("minecraft");
 		}
@@ -356,30 +286,30 @@ public abstract class Minecraft implements Runnable {
 		return minecraftDir;
 	}
 
-	public static File getAppDir(String var0) {
+	public static VFile2 getAppDir(String var0) {
 		String var1 = System.getProperty("user.home", ".");
-		File var2;
+		VFile2 var2;
 		switch(EnumOSMappingHelper.enumOSMappingArray[getOs().ordinal()]) {
 		case 1:
 		case 2:
-			var2 = new File(var1, '.' + var0 + '/');
+			var2 = new VFile2(var1, '.' + var0 + '/');
 			break;
 		case 3:
 			String var3 = System.getenv("APPDATA");
 			if(var3 != null) {
-				var2 = new File(var3, "." + var0 + '/');
+				var2 = new VFile2(var3, "." + var0 + '/');
 			} else {
-				var2 = new File(var1, '.' + var0 + '/');
+				var2 = new VFile2(var1, '.' + var0 + '/');
 			}
 			break;
 		case 4:
-			var2 = new File(var1, "Library/Application Support/" + var0);
+			var2 = new VFile2(var1, "Library/Application Support/" + var0);
 			break;
 		default:
-			var2 = new File(var1, var0 + '/');
+			var2 = new VFile2(var1, var0 + '/');
 		}
 
-		if(!var2.exists() && !var2.mkdirs()) {
+		if(!var2.exists()) {
 			throw new RuntimeException("The working directory could not be created: " + var2);
 		} else {
 			return var2;
@@ -446,9 +376,6 @@ public abstract class Minecraft implements Runnable {
 		try {
 			this.statFileWriter.func_27175_b();
 			this.statFileWriter.func_27182_c();
-			if(this.mcApplet != null) {
-				this.mcApplet.clearApplet();
-			}
 
 			try {
 				if(this.downloadResourcesThread != null) {

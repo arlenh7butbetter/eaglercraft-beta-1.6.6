@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.net.URL;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+
+import net.lax1dude.eaglercraft.internal.vfs2.VFile2;
 import net.minecraft.client.Minecraft;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -19,7 +21,7 @@ public class ThreadDownloadResources extends Thread {
 	private Minecraft mc;
 	private boolean closing = false;
 
-	public ThreadDownloadResources(File var1, Minecraft var2) {
+	public ThreadDownloadResources(VFile2 var1, Minecraft var2) {
 		this.mc = var2;
 		this.setName("Resource download thread");
 		this.setDaemon(true);

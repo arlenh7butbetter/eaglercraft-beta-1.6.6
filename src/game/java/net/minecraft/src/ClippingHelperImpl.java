@@ -1,6 +1,6 @@
 package net.minecraft.src;
 
-import java.nio.FloatBuffer;
+import net.lax1dude.eaglercraft.internal.buffer.FloatBuffer;
 import org.lwjgl.opengl.GL11;
 
 public class ClippingHelperImpl extends ClippingHelper {
@@ -26,8 +26,8 @@ public class ClippingHelperImpl extends ClippingHelper {
 		this.projectionMatrixBuffer.clear();
 		this.modelviewMatrixBuffer.clear();
 		this.field_1691_h.clear();
-		GL11.glGetFloat(GL11.GL_PROJECTION_MATRIX, this.projectionMatrixBuffer);
-		GL11.glGetFloat(GL11.GL_MODELVIEW_MATRIX, this.modelviewMatrixBuffer);
+		GL11.glGetFloat(GL11.GL_PROJECTION_MATRIX, this.projectionMatrixBuffer.array());
+		GL11.glGetFloat(GL11.GL_MODELVIEW_MATRIX, this.modelviewMatrixBuffer.array());
 		this.projectionMatrixBuffer.flip().limit(16);
 		this.projectionMatrixBuffer.get(this.projectionMatrix);
 		this.modelviewMatrixBuffer.flip().limit(16);

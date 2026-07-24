@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import net.lax1dude.eaglercraft.internal.vfs2.VFile2;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
@@ -12,7 +14,7 @@ import java.util.List;
 import java.util.zip.GZIPInputStream;
 
 public class SaveConverterMcRegion extends SaveFormatOld {
-	public SaveConverterMcRegion(File var1) {
+	public SaveConverterMcRegion(VFile2 var1) {
 		super(var1);
 	}
 

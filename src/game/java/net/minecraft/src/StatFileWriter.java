@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import net.lax1dude.eaglercraft.internal.vfs2.VFile2;
+
 import java.io.File;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -13,7 +15,7 @@ public class StatFileWriter {
 	private boolean field_27189_c = false;
 	private StatsSyncher field_27188_d;
 
-	public StatFileWriter(Session var1, File var2) {
+	public StatFileWriter(Session var1, VFile2 var2) {
 		File var3 = new File(var2, "stats");
 		if(!var3.exists()) {
 			var3.mkdir();
