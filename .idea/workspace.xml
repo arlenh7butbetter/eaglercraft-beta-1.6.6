@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96d45f5d-4b72-405d-86c2-aba6a11a1aea" name="Changes" comment="minecraft.java clean woohoo">
+    <list default="true" id="96d45f5d-4b72-405d-86c2-aba6a11a1aea" name="Changes" comment="minecraft.java clean + switch to eagruntime for time">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/java/net/minecraft/client/Minecraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/java/net/minecraft/client/Minecraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwjgl/java/net/lax1dude/eaglercraft/internal/PlatformInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwjgl/java/net/lax1dude/eaglercraft/internal/PlatformInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lwjgl/java/net/lax1dude/eaglercraft/internal/PlatformRuntime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lwjgl/java/net/lax1dude/eaglercraft/internal/PlatformRuntime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/carrotsearch/hppc/Containers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carrotsearch/hppc/Containers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/apache/logging/log4j/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/apache/logging/log4j/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teavm/java/net/lax1dude/eaglercraft/internal/teavm/EPKDownloadHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teavm/java/net/lax1dude/eaglercraft/internal/teavm/EPKDownloadHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,13 +121,22 @@
       <option name="project" value="LOCAL" />
       <updated>1784877372507</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="minecraft.java clean + switch to eagruntime for time">
+      <option name="closed" value="true" />
+      <created>1784877730843</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1784877730843</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="deleted some useless files and changed some file to VFile2" />
     <MESSAGE value="removed some mccanvas bs from minecraft.java" />
     <MESSAGE value="minecraft.java clean woohoo" />
-    <option name="LAST_COMMIT_MESSAGE" value="minecraft.java clean woohoo" />
+    <MESSAGE value="minecraft.java clean + switch to eagruntime for time" />
+    <option name="LAST_COMMIT_MESSAGE" value="minecraft.java clean + switch to eagruntime for time" />
   </component>
 </project>

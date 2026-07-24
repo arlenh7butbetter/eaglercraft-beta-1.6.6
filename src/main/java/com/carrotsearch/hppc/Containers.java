@@ -57,7 +57,7 @@ public final class Containers {
 			// Mix something that is changing over time (nanoTime)
 			// ... with something that is thread-local and relatively unique
 			// even for very short time-spans (new Object's address from a TLAB).
-			initialSeed = EagRuntime.nanoTime() ^ System.identityHashCode(new Object());
+			initialSeed = System.nanoTime() ^ System.identityHashCode(new Object());
 		}
 		return BitMixer.mix64(initialSeed);
 	}

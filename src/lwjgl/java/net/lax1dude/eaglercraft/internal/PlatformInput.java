@@ -315,13 +315,13 @@ public class PlatformInput {
 		if (!vsync && limitFps > 0 && limitFps <= 1000) {
 			long frameNanos = (1000000000l / limitFps);
 			if (syncTimer == 0l) {
-				syncTimer = EagRuntime.nanoTime() + frameNanos;
+				syncTimer = System.nanoTime() + frameNanos;
 			} else {
-				long nanos = EagRuntime.nanoTime();
+				long nanos = System.nanoTime();
 				int remaining = (int) ((syncTimer - nanos) / 1000000l);
 				if (remaining > 0) {
 					PlatformRuntime.sleep(remaining);
-					nanos = EagRuntime.nanoTime();
+					nanos = System.nanoTime();
 				}
 				if ((syncTimer += frameNanos) < nanos) {
 					syncTimer = nanos;
