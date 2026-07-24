@@ -4,6 +4,8 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import net.lax1dude.eaglercraft.internal.buffer.IntBuffer;
 import javax.imageio.ImageIO;
+
+import net.peyton.eagler.minecraft.Tessellator;
 import org.lwjgl.opengl.GL11;
 
 public class FontRenderer {

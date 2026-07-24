@@ -1,3 +1,4 @@
+/*
 package net.minecraft.src;
 
 import java.awt.Graphics;
@@ -86,3 +87,4 @@ public class ImageBufferDownload implements ImageBuffer {
 		return false;
 	}
 }
+*/

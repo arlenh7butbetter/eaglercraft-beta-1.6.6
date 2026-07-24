@@ -778,7 +778,7 @@ public class Minecraft implements Runnable {
 	}
 
 	private void func_28001_B() {
-		(new ThreadCheckHasPaid(this)).start();
+
 	}
 
 	public void runTick() {

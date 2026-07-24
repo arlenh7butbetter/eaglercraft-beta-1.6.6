@@ -1,5 +1,6 @@
 package net.minecraft.src;
 
+import net.lax1dude.eaglercraft.EagRuntime;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;

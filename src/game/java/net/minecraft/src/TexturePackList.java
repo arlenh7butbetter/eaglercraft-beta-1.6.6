@@ -8,6 +8,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import net.lax1dude.eaglercraft.internal.PlatformApplication;
+import net.lax1dude.eaglercraft.internal.PlatformRuntime;
 import net.lax1dude.eaglercraft.internal.vfs2.VFile2;
 import net.minecraft.client.Minecraft;
 
@@ -17,14 +19,14 @@ public class TexturePackList {
 	public TexturePackBase selectedTexturePack;
 	private Map field_6538_d = new HashMap();
 	private Minecraft mc;
-	private File texturePackDir;
+	private VFile2 texturePackDir;
 	private String currentTexturePack;
 
 	public TexturePackList(Minecraft var1, VFile2 var2) {
 		this.mc = var1;
-		this.texturePackDir = new File(var2, "texturepacks");
+		this.texturePackDir = new VFile2(var2, "texturepacks");
 		if(!this.texturePackDir.exists()) {
-			this.texturePackDir.mkdirs();
+			PlatformRuntime.writeCrashReport("texturePackDir not found net.minecraft.src.TexturePackList");
 		}
 
 		this.currentTexturePack = var1.gameSettings.skin;

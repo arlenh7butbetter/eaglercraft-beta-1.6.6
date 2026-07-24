@@ -1,5 +1,6 @@
 package net.minecraft.src;
 
+import net.lax1dude.eaglercraft.internal.PlatformRuntime;
 import net.lax1dude.eaglercraft.internal.vfs2.VFile2;
 
 import java.io.File;
@@ -16,9 +17,9 @@ public class StatFileWriter {
 	private StatsSyncher field_27188_d;
 
 	public StatFileWriter(Session var1, VFile2 var2) {
-		File var3 = new File(var2, "stats");
+		VFile2 var3 = new VFile2(var2, "stats");
 		if(!var3.exists()) {
-			var3.mkdir();
+			PlatformRuntime.writeCrashReport("not found VFile2 stats in net.minecraft.src.StatFileWriter");
 		}
 
 		File[] var4 = var2.listFiles();
