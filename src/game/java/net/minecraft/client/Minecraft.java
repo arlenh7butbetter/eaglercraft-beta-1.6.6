@@ -406,6 +406,7 @@ public class Minecraft implements Runnable {
 
 		}
 
+		EagRuntime.destroy();
 		System.gc();
 	}
 
