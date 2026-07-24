@@ -82,8 +82,6 @@ import net.minecraft.src.TextureWatchFX;
 import net.minecraft.src.TextureWaterFX;
 import net.minecraft.src.TextureWaterFlowFX;
 import net.minecraft.src.ThreadCheckHasPaid;
-import net.minecraft.src.ThreadDownloadResources;
-import net.minecraft.src.ThreadSleepForever;
 import net.minecraft.src.Timer;
 import net.minecraft.src.UnexpectedThrowable;
 import net.minecraft.src.Vec3D;
@@ -119,7 +117,6 @@ public class Minecraft implements Runnable {
 	public GuiScreen currentScreen = null;
 	public LoadingScreenRenderer loadingScreen = new LoadingScreenRenderer(this);
 	public EntityRenderer entityRenderer;
-	private ThreadDownloadResources downloadResourcesThread;
 	private int ticksRan = 0;
 	private int leftClickCounter = 0;
 	private int tempDisplayWidth;
@@ -218,11 +215,6 @@ public class Minecraft implements Runnable {
 		GL11.glViewport(0, 0, this.displayWidth, this.displayHeight);
 		this.effectRenderer = new EffectRenderer(this.theWorld, this.renderEngine);
 
-		try {
-			this.downloadResourcesThread = new ThreadDownloadResources(this.mcDataDir, this);
-			this.downloadResourcesThread.start();
-		} catch (Exception var3) {
-		}
 
 		this.checkGLError("Post startup");
 		this.ingameGUI = new GuiIngame(this);
@@ -378,13 +370,6 @@ public class Minecraft implements Runnable {
 		try {
 			this.statFileWriter.func_27175_b();
 			this.statFileWriter.func_27182_c();
-
-			try {
-				if(this.downloadResourcesThread != null) {
-					this.downloadResourcesThread.closeMinecraft();
-				}
-			} catch (Exception var9) {
-			}
 
 			System.out.println("Stopping!");
 
@@ -1038,7 +1023,6 @@ public class Minecraft implements Runnable {
 		System.out.println("FORCING RELOAD!");
 		this.sndManager = new SoundManager();
 		this.sndManager.loadSoundSettings(this.gameSettings);
-		this.downloadResourcesThread.reloadResources();
 	}
 
 	public boolean isMultiplayerWorld() {
